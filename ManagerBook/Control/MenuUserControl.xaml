@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="ManagerBook.Control.MenuUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:ManagerBook.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+
+        <DockPanel>
+            <Separator Margin="25" Background="#ffffff" DockPanel.Dock="Top" Height="0.8"/>
+            <StackPanel DockPanel.Dock="Top">
+
+            <Button x:Name="btnDBoard" Style="{StaticResource menuButton}" Click="btnDBoard_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Dashboard"/>
+                    </StackPanel>
+                </Button>
+                
+                
+            <Button x:Name="btnCtm" Style="{StaticResource menuButton}" Click="btnCtm_Click">
+                    
+                <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Customer"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnBookMana" Style="{StaticResource menuButton}" Click="btnBookMana_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="BookEdit" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Management"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnOrder" Style="{StaticResource menuButton}" Click="btnOrder_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="CartVariant" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Order"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                    <TextBlock Text="Logout"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+
+</UserControl>
