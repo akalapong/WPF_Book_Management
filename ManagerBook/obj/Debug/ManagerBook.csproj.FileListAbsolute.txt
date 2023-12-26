@@ -83,6 +83,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Met
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Metro.IconPacks.Zondicons.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Microsoft.Data.Sqlite.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MySql.Data.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\NavigationMenu.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Newtonsoft.Json.dll
@@ -96,6 +97,9 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ServiceStac
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ServiceStack.OrmLite.PostgreSQL.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ServiceStack.Text.dll
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\System.Buffers.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\System.Memory.dll
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\System.Numerics.Vectors.dll
@@ -215,6 +219,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Met
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Microsoft.Data.Sqlite.xml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\MySql.Data.xml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Newtonsoft.Json.xml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\Npgsql.xml

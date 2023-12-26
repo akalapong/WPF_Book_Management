@@ -23,6 +23,22 @@ namespace ManagerBook
         public MainWindow()
         {
             InitializeComponent();
+            DataAccesss.GetData();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> entries = DataAccesss.GetData();
+            if (entries.Count > 0)
+            {
+                string msg = string.Join("\r\n", entries.Select((entry, index) => $"{index + 1}. {entry}"));
+
+                MessageBox.Show(msg, "แสดงข้อมูล");
+            }
+            else
+            {
+                MessageBox.Show("ไม่มีข้อมูล.", "แสดงข้อมูล");
+            }
         }
     }
 }

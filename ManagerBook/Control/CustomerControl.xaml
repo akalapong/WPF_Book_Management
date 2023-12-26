@@ -39,15 +39,15 @@
 
         </StackPanel>
 
-        <TextBlock Text="Filter by" Grid.Row="3" FontSize="13" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock Text="ค้นหาข้อมูล" Grid.Row="3" FontSize="13" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
         <!--Filter Textbox-->
         <Grid Width="200" HorizontalAlignment="Right" Grid.Row="3">
-            <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="#B0B9C6" IsHitTestVisible="False"
-                           Panel.ZIndex="1" Text="Search in Members ..."
+            <TextBlock x:Name="txtSearch" Margin="15 0" VerticalAlignment="Center" Foreground="#B0B9C6" IsHitTestVisible="False"
+                           Panel.ZIndex="1" Text="Search Data ..."
                            Visibility="{Binding ElementName=textBoxSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" />
 
-            <TextBox Name="textBoxFilter" Style="{StaticResource filterTextBox}"/>
+            <TextBox Name="textBoxFilter" Style="{StaticResource filterTextBox}" GotFocus="TextBoxFilter_GotFocus" LostFocus="TextBoxFilter_LostFocus" TextChanged="TextBoxFilter_TextChanged"/>
         </Grid>
 
         
@@ -61,24 +61,11 @@
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
 
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
-                <DataGridTemplateColumn Header="รหัสลูกค้า" IsReadOnly="True" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
-                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
-                                </Border>
-
-                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
-                            </StackPanel>
-                        </DataTemplate>
-
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="ชื่อลูกค้า" Binding="{Binding Position}" IsReadOnly="True"  Width="*"/>
-                <DataGridTextColumn Header="ที่อยู่" Binding="{Binding Email}" IsReadOnly="True"  Width="*"/>
-                <DataGridTextColumn Header="E-Mail" Binding="{Binding Phone}" IsReadOnly="True"  Width="*"/>
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="รหัสลูกค้า" Binding="{Binding Num}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="ชื่อลูกค้า" Binding="{Binding Name}" IsReadOnly="True"  Width="*"/>
+                <DataGridTextColumn Header="ที่อยู่" Binding="{Binding Address}" IsReadOnly="True"  Width="*"/>
+                <DataGridTextColumn Header="E-Mail" Binding="{Binding Email}" IsReadOnly="True"  Width="*"/>
 
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
