@@ -278,3 +278,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.csproj.CopyComplete
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.exe
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.pdb
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\FormAddBookControl.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\AddBook.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\FormAddBookControl.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\AddBook.baml
