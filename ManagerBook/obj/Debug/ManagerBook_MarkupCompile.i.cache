@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\App.xaml
-9-347340984
+132107844050
 
-161157283320
+20992209914
 233-690147380
-Control\BoardControl.xaml;Control\BookControl.xaml;Control\CustomerControl.xaml;Control\MenuUserControl.xaml;Control\OrderControl.xaml;Control\Text.xaml;MainWindow.xaml;Views\Main.xaml;Views\Login.xaml;
+Control\BoardControl.xaml;Control\BookControl.xaml;Control\CustomerControl.xaml;Control\FormEditCustomerControl.xaml;Control\FormAddCustomerControl.xaml;Control\MenuUserControl.xaml;Control\OrderControl.xaml;Control\Text.xaml;MainWindow.xaml;Views\EditCustomer.xaml;Views\AddCustomer.xaml;Views\Main.xaml;Views\Login.xaml;
 
-False
+True
 

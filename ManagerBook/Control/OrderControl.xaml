@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:ManagerBook.Control"
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-             xmlns:uc="clr-namespace:ManagerBook.Control"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="850">
     <Grid>
@@ -28,21 +27,21 @@
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="BookMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="xxxx" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="xxxx" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนลูกค้า" TextMiddle="xxxx" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนลูกค้า" TextMiddle="xxxx" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Sale" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="xxxx" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="xxxx" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
         </StackPanel>

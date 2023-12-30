@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using ManagerBook.Views;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +26,13 @@ namespace ManagerBook.Control
     /// </summary>
     public partial class CustomerControl : UserControl
     {
-        ObservableCollection<Member> members = new ObservableCollection<Member>();
+        public DataGrid MembersDataGrid
+        {
+            get { return membersDataGrid; }
+        }
+
+        public ObservableCollection<Member> members;
+
 
         public CustomerControl()
         {
@@ -35,6 +42,8 @@ namespace ManagerBook.Control
             members = new ObservableCollection<Member>(GetMembers());
 
             membersDataGrid.ItemsSource = members;
+           
+
         }
 
         public class Member
@@ -106,7 +115,6 @@ namespace ManagerBook.Control
             }
         }
 
-
         private void TextBoxFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             Search();
@@ -114,17 +122,99 @@ namespace ManagerBook.Control
 
         private void TextBoxFilter_GotFocus(object sender, RoutedEventArgs e)
         {
-            // เมื่อ TextBox ได้รับโฟกัส, ซ่อน TextBlock
             txtSearch.Visibility = Visibility.Collapsed;
         }
 
         private void TextBoxFilter_LostFocus(object sender, RoutedEventArgs e)
         {
-            // เมื่อ TextBox หายโฟกัส, แสดง TextBlock ถ้า TextBox ว่าง
             if (string.IsNullOrEmpty(textBoxFilter.Text))
             {
                 txtSearch.Visibility = Visibility.Visible;
             }
         }
+
+
+        //Button AddData
+        private void AddNewMemberButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            AddCustomer addCustomer = new AddCustomer(this);
+            addCustomer.ShowDialog();
+        }
+
+
+
+        //Delete Data
+        private void DeleteMember(string memberId)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Filename=sqliteSample.db"))
+            {
+                connection.Open();
+
+                // คำสั่ง SQL เพื่อลบข้อมูล
+                string query = "DELETE FROM Customers WHERE Customer_Id = @MemberId";
+
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    // กำหนดค่าพารามิเตอร์
+                    command.Parameters.AddWithValue("@MemberId", memberId);
+
+                    // ทำการ execute คำสั่ง SQL
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //public event Action<Member> EditButtonClicked;
+        private void EditMemberButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            Member selectedMember = (Member)membersDataGrid.SelectedItem;
+
+            if (selectedMember != null)
+            {
+                // สร้าง FormEditCustomerControl และส่งข้อมูลไปยังโดยใช้คอนสตรักเตอร์ที่มีพารามิเตอร์ Member
+                //FormEditCustomerControl editForm = new FormEditCustomerControl(selectedMember);
+
+                EditCustomer editCustomer = new EditCustomer(this,selectedMember);  //this เข้าไปเพื่อส่งตัวอ็อบเจ็กต์ CustomerControl ไปยัง EditCustomer.
+                editCustomer.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกลูกค้าที่ต้องการแก้ไข.");
+            }
+
+            //EditCustomer editCustomer = new EditCustomer();
+            //editCustomer.Show();
+
+        }
+
+        // เรียกใช้งานเมื่อต้องการลบข้อมูล
+        private void DeleteMemberButton_Click(object sender, RoutedEventArgs e)
+        {
+            // รับข้อมูลที่เลือกจาก DataGrid หรือให้ค่าตามที่คุณต้องการ
+            Member selectedMember = (Member)membersDataGrid.SelectedItem;
+
+            if (selectedMember != null)
+            {
+                MessageBoxResult result = MessageBox.Show("คุณต้องการจะลบใช่ไหม?", "ยืนยันการลบ", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteMember(selectedMember.Num);
+                    members.Remove(selectedMember);
+                    membersDataGrid.ItemsSource = null;
+                    membersDataGrid.ItemsSource = members;
+
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a member to delete.");
+            }
+        }
+
+
+
     }
 }

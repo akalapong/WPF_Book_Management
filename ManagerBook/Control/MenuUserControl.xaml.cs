@@ -89,7 +89,7 @@ namespace ManagerBook.Control
             _selectedButton = button;
             if (_selectedButton != null)
             {
-                _selectedButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#008ae6"));
+                _selectedButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#787C86"));
             }
         }
 

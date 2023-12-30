@@ -28,21 +28,21 @@
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="BookMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="9999" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="9999" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนลูกค้า" TextMiddle="9999" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนลูกค้า" TextMiddle="9999" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Sale" Style="{StaticResource menuDashIcon}"/>
-                    <uc:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="9999" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="9999" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
         </StackPanel>
