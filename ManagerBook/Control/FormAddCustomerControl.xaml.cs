@@ -83,9 +83,9 @@ namespace ManagerBook.Control
                 return;
             }
 
-            if (!uint.TryParse(txtId.Text, out uint id))
+            if (!uint.TryParse(txtId.Text, out uint id) || txtId.Text.Length != 5)
             {
-                MessageBox.Show("รหัสไม่ถูกต้อง. กรุณาใส่รหัสที่เป็นตัวเลขที่ถูกต้อง.", "ข้อผิดพลาด", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("รหัสไม่ถูกต้อง. กรุณาใส่รหัสที่เป็นตัวเลขที่ถูกต้องและมี 5 หลัก.", "ข้อผิดพลาด", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

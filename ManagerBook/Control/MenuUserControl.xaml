@@ -15,7 +15,7 @@
 
             <Button x:Name="btnDBoard" Style="{StaticResource menuButton}" Click="btnDBoard_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}"/>
+                        <Icon:PackIconMaterial Kind="ViewDashboard" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Dashboard"/>
                     </StackPanel>
                 </Button>
@@ -45,7 +45,7 @@
             </StackPanel>
             <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
                 <StackPanel Orientation="Horizontal">
-                    <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                    <Icon:PackIconMaterial Kind="LogoutVariant" Style="{StaticResource menuButtonIcon}"/>
                     <TextBlock Text="Logout"/>
                 </StackPanel>
             </Button>

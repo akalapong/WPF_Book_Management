@@ -24,7 +24,7 @@ namespace ManagerBook.Views
         {
             InitializeComponent();
         }
-
+        
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left)
@@ -35,6 +35,7 @@ namespace ManagerBook.Views
         private bool IsMaximized = false;
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+
             if(e.ClickCount == 2) 
             {
                 if(this.IsMaximized)
@@ -52,7 +53,7 @@ namespace ManagerBook.Views
                 }
             }
         }
-
+        
         public void ChangeContent(UserControl newContent)
         {
             // ให้ Content ของ MainWindow เป็น UserControl ที่กำหนด

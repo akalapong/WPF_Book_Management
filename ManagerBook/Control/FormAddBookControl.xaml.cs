@@ -49,7 +49,7 @@ namespace ManagerBook.Control
             return int.TryParse(text, out _);
         }
 
-        public void AddData(uint isbn, string title, string des, string price)
+        public void AddData(ulong isbn, string title, string des, string price)
         {
             using (SqliteConnection db = new SqliteConnection($"Filename=sqliteSample.db"))
             {
@@ -79,9 +79,9 @@ namespace ManagerBook.Control
                 return;
             }
 
-            if (!uint.TryParse(txtISBN.Text, out uint isbn))
+            if (!ulong.TryParse(txtISBN.Text, out ulong isbn) || txtISBN.Text.Length != 10)
             {
-                MessageBox.Show("รหัสไม่ถูกต้อง. กรุณาใส่รหัสที่เป็นตัวเลขที่ถูกต้อง.", "ข้อผิดพลาด", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("รหัสไม่ถูกต้อง. กรุณาใส่รหัสที่เป็นตัวเลขที่ถูกต้องและมี 10 หลัก.", "ข้อผิดพลาด", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
