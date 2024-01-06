@@ -75,6 +75,14 @@
                         <Run Text="รวมราคา: "/>
                         <Run Text="{Binding TotalPrice}" />
                     </TextBlock>
+
+
+                    <Button Style="{StaticResource addButton}" Margin="15 20 15 20">
+                        <StackPanel Orientation="Horizontal">
+                            <Icon:PackIconMaterial Kind="Check" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
+                            <TextBlock Text="ยืนยัน"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
 
             </Grid>

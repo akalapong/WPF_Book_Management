@@ -27,21 +27,21 @@
             <Button Style="{StaticResource showButton}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="BookMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <local:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="1102" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนหนังสือทั้งหมด" TextMiddle="{Binding TotalBooks}" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton2}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuDashIcon}"/>
-                    <local:Text TextTop="จำนวนลูกค้า" TextMiddle="68" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนลูกค้า" TextMiddle="{Binding TotalCustomers}" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
 
             <Button Style="{StaticResource showButton3}">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Sale" Style="{StaticResource menuDashIcon}"/>
-                    <local:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="9" TextBottom="เล่ม"/>
+                    <local:Text TextTop="จำนวนการขายหนังสือในวันนี้" TextMiddle="{Binding TotalSaleBooks}" TextBottom="เล่ม"/>
                 </StackPanel>
             </Button>
         </StackPanel>
@@ -86,7 +86,7 @@
 
 
                     <lvc:CartesianChart.Series>
-                        <lvc:LineSeries Stroke="#ff4b8d" StrokeThickness="3" PointGeometrySize="0" Values="10,122,21,51,22,102,56,12,56,12,12,67">
+                        <lvc:LineSeries Stroke="#ff4b8d" StrokeThickness="3" PointGeometrySize="0" Values="1,4,6,6,6,6,6,6,6,6,6,6">
                             <lvc:LineSeries.Fill>
                                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                     <GradientStop Color="#406D4F65" Offset="0.4"/>
@@ -94,6 +94,25 @@
                                 </LinearGradientBrush>
                             </lvc:LineSeries.Fill>
                         </lvc:LineSeries>
+
+                        <lvc:LineSeries Stroke="#ffa02d" StrokeThickness="3" PointGeometrySize="0" Values="1,2,6,11,12,12,15,22,25,32,32,33">
+                            <lvc:LineSeries.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#406D4F65" Offset="0.4"/>
+                                    <GradientStop Color="#40484257" Offset="1.2"/>
+                                </LinearGradientBrush>
+                            </lvc:LineSeries.Fill>
+                        </lvc:LineSeries>
+
+                        <lvc:LineSeries Stroke="#41d064" StrokeThickness="3" PointGeometrySize="0" Values="13,12,16,11,15,11,11,22,35,32,52,43">
+                            <lvc:LineSeries.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#406D4F65" Offset="0.4"/>
+                                    <GradientStop Color="#40484257" Offset="1.2"/>
+                                </LinearGradientBrush>
+                            </lvc:LineSeries.Fill>
+                        </lvc:LineSeries>
+
                     </lvc:CartesianChart.Series>
                 </lvc:CartesianChart>
             </Grid>
