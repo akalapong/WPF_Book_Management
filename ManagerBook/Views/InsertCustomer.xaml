@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:ManagerBook.Control"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Height="350" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Height="670" Width="650" WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent">
     
     <Border Background="#eff2f7" BorderThickness="1" BorderBrush="#FFCDD3DA" CornerRadius="30"  MouseDown="Border_MouseDown">
@@ -35,11 +35,48 @@
             </Grid>
 
             <Grid x:Name="mainContent" Grid.Column="1" Margin="40 40 60 40" Grid.RowSpan="2">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <local:FormInsertCustomerId DataContext="{Binding}"/>
-                
+                <StackPanel DockPanel.Dock="Top">
+
+                    <TextBlock Text="สรุปรายการ" FontSize="12" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#4d5a66" DockPanel.Dock="Top"/>
+                    <TextBlock Text="Summary Report" FontSize="22" FontWeight="SemiBold" Margin="0 0 0 0" Foreground="#121518" DockPanel.Dock="Top"/>
+                    <Separator Margin="25" Background="Black" DockPanel.Dock="Top" Height="0.8"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <TextBlock Text="รหัสลูกค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CustomerId}" FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <TextBlock Text="ชื่อ: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CustomerName}" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <TextBlock Text="รายการสั่งซื้อสินค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <DataGrid ItemsSource="{Binding SelectedBooks}" MaxHeight="210" Margin="0 10 0 0" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}">
+                        
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding BookName}" IsReadOnly="True" Width="400" />
+                            <DataGridTemplateColumn Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Quantity, StringFormat='X {0}'}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding Price}" IsReadOnly="True" Width="Auto" />
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+
+                    <TextBlock FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap">
+                        <Run Text="รวมราคา: "/>
+                        <Run Text="{Binding TotalPrice}" />
+                    </TextBlock>
+                </StackPanel>
+
             </Grid>
         </Grid>
     </Border>

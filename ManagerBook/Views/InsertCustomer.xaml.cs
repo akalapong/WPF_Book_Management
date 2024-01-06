@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static ManagerBook.Control.OrderControl;
 
 namespace ManagerBook.Views
 {
@@ -20,14 +21,20 @@ namespace ManagerBook.Views
     /// </summary>
     public partial class InsertCustomer : Window
     {
-        public List<OrderControl.ReportData> SelectedBooks { get; set; }
+       
+        public List<ReportData> SelectedBooks { get; set; }
         public double TotalPrice { get; set; }
-        public InsertCustomer(List<OrderControl.ReportData> selectedBooks, double totalPrice)
+        public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
+
+        public InsertCustomer(List<ReportData> selectedBooks, double totalPrice, int customerId, string customerName)
         {
             InitializeComponent();
             SelectedBooks = selectedBooks;
             TotalPrice = totalPrice;
             mainContent.DataContext = this; // Set DataContext to this for proper binding
+            CustomerId = customerId;
+            CustomerName = customerName;
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {

@@ -290,3 +290,5 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\For
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\FormReport.baml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Report.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Report.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\InsertId.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\InsertId.baml

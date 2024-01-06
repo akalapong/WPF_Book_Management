@@ -74,6 +74,7 @@ namespace ManagerBook.Control
             public int Quantity { get; set; }
             public double Price { get; set; }
             public int TotalPrice { get; internal set; }
+
         }
  
         //ค้นหา-----------//
@@ -253,15 +254,23 @@ namespace ManagerBook.Control
         }
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedBooks.Count > 0)
+            if (selectedBooks.Count == 0)
             {
-                
-                InsertCustomer insertCustomer = new InsertCustomer(GetReportData(), selectedBooks.Sum(book => book.TotalPrice));
-                insertCustomer.ShowDialog();
+                MessageBox.Show("กรุณาเลือกหนังสือที่ต้องการสั่งซื้อ", "คำเตือน", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
-            else
+
+
+            // Show InsertId before FormInsertCustomerId
+            InsertId insertId = new InsertId(GetReportData(), selectedBooks.Sum(book => book.TotalPrice));
+            insertId.ShowDialog();
+
+            // ตรวจสอบว่า FormInsertCustomerId ถูกปิดลงหรือไม่
+            if (insertId.DialogResult.HasValue && insertId.DialogResult.Value)
             {
-                MessageBox.Show("กรุณาเลือกหนังสือก่อนทำรายการ", "คำเตือน", MessageBoxButton.OK, MessageBoxImage.Warning);
+                // Show FormInsertCustomerId with SelectedBooks and TotalPrice
+                InsertCustomer insertCustomer = new InsertCustomer(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), insertId.CustomerId, insertId.CustomerName);
+                insertCustomer.ShowDialog();
             }
         }
 

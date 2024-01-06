@@ -415,12 +415,16 @@
     <Compile Include="Control\FormAddCustomerControl.xaml.cs">
       <DependentUpon>FormAddCustomerControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\InsertId.xaml.cs">
+      <DependentUpon>InsertId.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\MenuUserControl.xaml.cs">
       <DependentUpon>MenuUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\OrderDetail.cs" />
     <Compile Include="Control\StringIsEmptyConverter.cs" />
     <Compile Include="Control\Text.xaml.cs">
       <DependentUpon>Text.xaml</DependentUpon>
@@ -477,6 +481,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\FormAddCustomerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\InsertId.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

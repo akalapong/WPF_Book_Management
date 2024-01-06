@@ -14,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static ManagerBook.Control.CustomerControl;
-using static ManagerBook.Control.FormInsertCustomerId;
 
 namespace ManagerBook.Views
 {
@@ -23,27 +22,15 @@ namespace ManagerBook.Views
     /// </summary>
     public partial class Report : Window
     {
-
+        
         public Report()
         {
             InitializeComponent();
         }
-
-        public Report(CustomerData customerData, List<OrderControl.ReportData> selectedBooksData)
+        public Report(List<OrderControl.ReportData> data)
         {
             InitializeComponent();
-            LoadData(customerData, selectedBooksData);
-        }
-
-        private void LoadData(CustomerData customerData, List<OrderControl.ReportData> selectedBooksData)
-        {
-            DataContext = new
-            {
-                CustomerId = customerData.CustomerId,
-                CustomerName = customerData.CustomerName,
-                SelectedBooks = selectedBooksData,
-                TotalPrice = selectedBooksData.Sum(book => book.TotalPrice)
-            };
+            LoadData(data);
         }
 
         private void LoadData(List<OrderControl.ReportData> data)

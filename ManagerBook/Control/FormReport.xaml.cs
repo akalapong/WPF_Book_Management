@@ -27,7 +27,7 @@ namespace ManagerBook.Control
     public partial class FormReport : UserControl
     {
         //public FormInsertCustomerId customerData;
-        private CustomerData customerData;
+        private ManagerBook.Control.FormInsertCustomerId.CustomerData customerData;
         public FormReport()
         {
             InitializeComponent();
@@ -35,37 +35,17 @@ namespace ManagerBook.Control
         }
 
 
-        public FormReport(CustomerData data)
+        public FormReport(ManagerBook.Control.FormInsertCustomerId.CustomerData data)
         {
             InitializeComponent();
             this.customerData = data;
             DataContext = this.customerData;
 
-            Debug.WriteLine($"CustomerId: {customerData.CustomerId}, CustomerName: {customerData.CustomerName}");
-            // หรือ
-            MessageBox.Show($"CustomerId: {customerData.CustomerId}, CustomerName: {customerData.CustomerName}");
         }
 
-        public List<OrderControl.ReportData> SelectedBooks
-        {
-            get { return (List<OrderControl.ReportData>)GetValue(SelectedBooksProperty); }
-            set { SetValue(SelectedBooksProperty, value); }
-        }
 
-        public static readonly DependencyProperty SelectedBooksProperty =
-            DependencyProperty.Register("SelectedBooks", typeof(List<OrderControl.ReportData>), typeof(FormReport));
 
-        public double TotalPrice
-        {
-            get { return (double)GetValue(TotalPriceProperty); }
-            set { SetValue(TotalPriceProperty, value); }
-        }
-
-        public static readonly DependencyProperty TotalPriceProperty =
-            DependencyProperty.Register("TotalPrice", typeof(double), typeof(FormReport));
-    
-
-    private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             // Allow only numeric input
             if (!IsNumeric(e.Text))
@@ -89,6 +69,7 @@ namespace ManagerBook.Control
                 {
                     db.Open();
                     InsertTransactionData(customerData);
+                    db.Close();
                 }
             }
             else
@@ -97,7 +78,7 @@ namespace ManagerBook.Control
             }
         }
 
-        private void InsertTransactionData(CustomerData customerData)
+        private void InsertTransactionData(ManagerBook.Control.FormInsertCustomerId.CustomerData customerData)
         {
             using (SqliteConnection db = new SqliteConnection($"Filename=sqliteSample.db"))
             {

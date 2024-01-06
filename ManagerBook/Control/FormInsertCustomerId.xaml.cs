@@ -26,17 +26,29 @@ namespace ManagerBook.Control
     /// </summary>
     public partial class FormInsertCustomerId : UserControl
     {
-        private List<OrderControl.ReportData> reportData;
+
         public FormInsertCustomerId()
         {
             InitializeComponent();
         }
 
-        public void LoadData(List<OrderControl.ReportData> data)
+        public List<OrderControl.ReportData> SelectedBooks
         {
-            reportData = data;
+            get { return (List<OrderControl.ReportData>)GetValue(SelectedBooksProperty); }
+            set { SetValue(SelectedBooksProperty, value); }
         }
 
+        public static readonly DependencyProperty SelectedBooksProperty =
+            DependencyProperty.Register("SelectedBooks", typeof(List<OrderControl.ReportData>), typeof(FormInsertCustomerId));
+
+        public double TotalPrice
+        {
+            get { return (double)GetValue(TotalPriceProperty); }
+            set { SetValue(TotalPriceProperty, value); }
+        }
+
+        public static readonly DependencyProperty TotalPriceProperty =
+            DependencyProperty.Register("TotalPrice", typeof(double), typeof(FormInsertCustomerId));
 
         public class CustomerData
         {
@@ -46,6 +58,7 @@ namespace ManagerBook.Control
             public int TotalPrice { get; set; }
             public string CustomerName { get; set; }
             public string CustomerEmail { get; set; }
+
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -61,28 +74,6 @@ namespace ManagerBook.Control
         {
             return int.TryParse(text, out _);
         }
-
-        public List<OrderControl.ReportData> SelectedBooks
-        {
-            get { return (List<OrderControl.ReportData>)GetValue(SelectedBooksProperty); }
-            set { SetValue(SelectedBooksProperty, value); }
-        }
-
-
-        public static readonly DependencyProperty SelectedBooksProperty =
-            DependencyProperty.Register("SelectedBooks", typeof(List<OrderControl.ReportData>), typeof(FormInsertCustomerId));
-
-        public double TotalPrice
-        {
-            get { return (double)GetValue(TotalPriceProperty); }
-            set { SetValue(TotalPriceProperty, value); }
-        }
-
-        public static readonly DependencyProperty TotalPriceProperty =
-            DependencyProperty.Register("TotalPrice", typeof(double), typeof(FormInsertCustomerId));
-
-
-
 
         public void FindData(uint id)
         {
@@ -107,7 +98,7 @@ namespace ManagerBook.Control
                     CustomerData customerData = new CustomerData
                     {
                         CustomerId = customerId,
-                        CustomerName = customerName,
+                        CustomerName = customerName
                     };
 
                     // Get the selected books data
@@ -115,7 +106,8 @@ namespace ManagerBook.Control
                     List<OrderControl.ReportData> selectedBooksData = orderControlInstance.GetReportData();
 
                     // Show the Report form and close the FormInsertCustomerId form
-                    Report report = new Report(customerData, selectedBooksData);
+                    Report report = new Report(selectedBooksData);
+                    report.DataContext = customerData;
                     report.ShowDialog();
 
                     CloseFormInsertCustomerId();
@@ -151,5 +143,8 @@ namespace ManagerBook.Control
 
                 FindData(id);
             }
+
+
+
         }
 }
