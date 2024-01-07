@@ -292,3 +292,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Repor
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Report.baml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\InsertId.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\InsertId.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\FormEditBookControl.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\EditBook.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Control\FormEditBookControl.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\EditBook.baml

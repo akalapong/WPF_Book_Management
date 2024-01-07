@@ -86,7 +86,7 @@
 
 
                     <lvc:CartesianChart.Series>
-                        <lvc:LineSeries Stroke="#ff4b8d" StrokeThickness="3" PointGeometrySize="0" Values="1,4,6,6,6,6,6,6,6,6,6,6">
+                        <lvc:LineSeries Title="จำนวนหนังสือทั้งหมด" Stroke="#ff4b8d" StrokeThickness="3" PointGeometrySize="0" Values="1,4,6,6,6,6,6,6,6,6,6,6">
                             <lvc:LineSeries.Fill>
                                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                     <GradientStop Color="#406D4F65" Offset="0.4"/>
@@ -95,7 +95,7 @@
                             </lvc:LineSeries.Fill>
                         </lvc:LineSeries>
 
-                        <lvc:LineSeries Stroke="#ffa02d" StrokeThickness="3" PointGeometrySize="0" Values="1,2,6,11,12,12,15,22,25,32,32,33">
+                        <lvc:LineSeries Title="จำนวนลูกค้า" Stroke="#ffa02d" StrokeThickness="3" PointGeometrySize="0" Values="1,2,6,11,12,12,15,22,25,32,32,33">
                             <lvc:LineSeries.Fill>
                                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                     <GradientStop Color="#406D4F65" Offset="0.4"/>
@@ -104,7 +104,7 @@
                             </lvc:LineSeries.Fill>
                         </lvc:LineSeries>
 
-                        <lvc:LineSeries Stroke="#41d064" StrokeThickness="3" PointGeometrySize="0" Values="13,12,16,11,15,11,11,22,35,32,52,43">
+                        <lvc:LineSeries Title="จำนวนการขายหนังสือในวันนี้" Stroke="#41d064" StrokeThickness="3" PointGeometrySize="0" Values="13,12,16,11,15,11,11,22,35,32,52,43">
                             <lvc:LineSeries.Fill>
                                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                     <GradientStop Color="#406D4F65" Offset="0.4"/>

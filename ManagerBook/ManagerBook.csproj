@@ -403,6 +403,9 @@
     <Compile Include="Control\FormAddBookControl.xaml.cs">
       <DependentUpon>FormAddBookControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\FormEditBookControl.xaml.cs">
+      <DependentUpon>FormEditBookControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\FormReport.xaml.cs">
       <DependentUpon>FormReport.xaml</DependentUpon>
     </Compile>
@@ -432,6 +435,9 @@
     <Compile Include="DataAccesss.cs" />
     <Compile Include="Views\AddBook.xaml.cs">
       <DependentUpon>AddBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditBook.xaml.cs">
+      <DependentUpon>EditBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OrderDetailsViewModel.cs" />
     <Compile Include="Views\Report.xaml.cs">
@@ -467,6 +473,10 @@
     <Page Include="Control\FormAddBookControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FormEditBookControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\FormReport.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -515,6 +525,10 @@
     <Page Include="Views\AddBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Report.xaml">
       <Generator>MSBuild:Compile</Generator>

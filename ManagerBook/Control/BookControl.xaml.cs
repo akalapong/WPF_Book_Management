@@ -24,7 +24,10 @@ namespace ManagerBook.Control
     /// </summary>
     public partial class BookControl : UserControl
     {
-
+        public DataGrid BooksDataGrid
+        {
+            get { return booksDataGrid; }
+        }
         public ObservableCollection<NameBook> namebooks;
         public BookControl()
         {
@@ -139,6 +142,28 @@ namespace ManagerBook.Control
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        private void EditBookButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            NameBook selectedBook = (NameBook)booksDataGrid.SelectedItem;
+
+            if (selectedBook != null)
+            {
+                // สร้าง FormEditCustomerControl และส่งข้อมูลไปยังโดยใช้คอนสตรักเตอร์ที่มีพารามิเตอร์ Member
+                //FormEditCustomerControl editForm = new FormEditCustomerControl(selectedMember);
+
+                EditBook editBook = new EditBook(this, selectedBook);//this เข้าไปเพื่อส่งตัวอ็อบเจ็กต์ CustomerControl ไปยัง EditCustomer.
+                editBook.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("กรุณาเลือกลูกค้าที่ต้องการแก้ไข.");
+            }
+
+            //EditCustomer editCustomer = new EditCustomer();
+            //editCustomer.Show();
+
         }
 
         private void DeleteBookButton_Click(object sender, RoutedEventArgs e)
