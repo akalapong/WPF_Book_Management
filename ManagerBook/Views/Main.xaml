@@ -50,12 +50,7 @@
             <Grid x:Name="mainContent" Grid.Column="1" Margin="0 20 20 20" Grid.RowSpan="2">
 
                 <local:BoardControl/>
-
             </Grid>
-
-
-
-
         </Grid>
     </Border>
 </Window>

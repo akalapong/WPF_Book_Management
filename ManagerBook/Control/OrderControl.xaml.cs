@@ -271,6 +271,8 @@ namespace ManagerBook.Control
                 // Show FormInsertCustomerId with SelectedBooks and TotalPrice
                 SumReport sumReport = new SumReport(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), insertId.CustomerId, insertId.CustomerName);
                 sumReport.ShowDialog();
+
+
             }
         }
 

@@ -112,7 +112,6 @@ namespace ManagerBook.Control
 
             // อัปเดตข้อมูลใน DataGrid
             mainCustomerControl.members.Add(addedMember);
-
         }
 
     }

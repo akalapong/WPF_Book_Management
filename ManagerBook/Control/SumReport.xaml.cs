@@ -1,4 +1,5 @@
 ﻿using ManagerBook.Control;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static ManagerBook.Control.CustomerControl;
+using System.Xml.Linq;
 using static ManagerBook.Control.OrderControl;
 
 namespace ManagerBook.Control
@@ -54,5 +57,31 @@ namespace ManagerBook.Control
             }
         }
 
+        public void AddData(uint isbn, string customerid, string quatity, string totalprice)
+        {
+            using (SqliteConnection db = new SqliteConnection($"Filename=sqliteSample.db"))
+            {
+                db.Open();
+                SqliteCommand insertCommand = new SqliteCommand();
+                insertCommand.Connection = db;
+
+                insertCommand.CommandText = "INSERT INTO Transactions (ISBN, Customer_Id, Quatity, Total_Price) " +
+                    "VALUES (@Isbn, @Customer_id, @Quatity, @Total_price)";
+
+                // Add parameters with values
+                insertCommand.Parameters.AddWithValue("@Isbn", isbn);
+                insertCommand.Parameters.AddWithValue("@Customer_id", customerid);
+                insertCommand.Parameters.AddWithValue("@Quatity", quatity);
+                insertCommand.Parameters.AddWithValue("@Total_price", totalprice);
+                insertCommand.ExecuteReader();
+                db.Close();
+
+            }
+        }
+
+        private void AddDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

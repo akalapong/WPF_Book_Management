@@ -3,151 +3,95 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:ManagerBook.View"
         mc:Ignorable="d"
         ResizeMode="NoResize"
                 Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         WindowStyle="None" 
-        AllowsTransparency="True"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+        AllowsTransparency="True">
 
-    <Window.Resources>
-        <Style TargetType="TextBox" x:Key="Textbox">
-            <Setter Property="Padding" Value="7"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Foreground" Value="#000"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="border"
-                            CornerRadius="0"
-                            BorderBrush="#000"
-                            BorderThickness="2"
-                            Background="#fff"
-                            >
-                            <ScrollViewer x:Name="PART_ContentHost"
-                            Focusable="false"
-                            HorizontalScrollBarVisibility="Hidden"
-                            VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="Red"/>
-                                <Setter Property="Foreground" Value="Red" />
-                                <Setter Property="FontWeight" Value="Bold" />
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="true">
-                                <Setter Property="Foreground" Value="Blue" />
-                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="TextBox" x:Key="Textbox1">
-            <Setter Property="Padding" Value="7"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Foreground" Value="#000"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="border"
-                            CornerRadius="10"
-                            BorderBrush="#000"
-                            BorderThickness="2"
-                            Background="#fff"
-                            >
-                            <ScrollViewer x:Name="PART_ContentHost"
-                            Focusable="false"
-                            HorizontalScrollBarVisibility="Hidden"
-                            VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-
-                                <Setter Property="Foreground" Value="#808080" />
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="PasswordBox" x:Key="PasswordBox">
-            <Setter Property="Padding" Value="7"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Foreground" Value="#000"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type PasswordBox}">
-                        <Border x:Name="border"
-                            CornerRadius="10"
-                            BorderBrush="#000"
-                            BorderThickness="2"
-                            Background="#fff"
-                        >
-                            <ScrollViewer x:Name="PART_ContentHost"
-                        Focusable="false"
-                        HorizontalScrollBarVisibility="Hidden"
-                        VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-
-                                <Setter Property="Foreground" Value="#808080" />
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    <Window.Background>
-        <ImageBrush/>
-    </Window.Background>
-    
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Views/bg.png" TileMode="None" Stretch="None"/>
-        </Grid.Background>
-        <Label Content="MANAGE&#xD;&#xA;LOGIN BOOKSTORE" HorizontalAlignment="Left" Margin="50,48,0,0" VerticalAlignment="Top" Width="288" Height="106" FontSize="30" FontWeight="Bold"/>
-        <TextBox BorderThickness="1,1,1,1" HorizontalAlignment="Left" Margin="50,171,0,0" VerticalAlignment="Top" Width="288"  Height="46" FontSize="20" Style="{StaticResource Textbox1}" TextChanged="txt_User" FontFamily="LINESeedSansTH" />
-        <PasswordBox x:Name="txt_Password" HorizontalAlignment="Left" Margin="50,248,0,0" VerticalAlignment="Top" Width="288" Height="46" FontSize="20" Style="{StaticResource PasswordBox}"/>
-        <Button BorderThickness="2" Cursor="Hand" x:Name="login" BorderBrush="Black" Background="White" Margin="109,321,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Content="LOGIN" FontWeight="Bold" Click="login_Click" RenderTransformOrigin="0.496,0.505" Width="170" Height="45">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+        </Grid.ColumnDefinitions>
 
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="BorderThickness" Value="9"/>
-                    <Setter Property="CornerRadius" Value="10"/>
-                    <Setter Property="Padding" Value="10,2,10,3"/>
-                    <Setter Property="Background" Value="White"/>
-                </Style>
 
-            </Button.Resources>
-        </Button>
+        <Button x:Name="btnClose" Style="{StaticResource closeButton}" Click="btn_Close_Click" Grid.Column="1" Panel.ZIndex="1" Margin="0 3 3 410">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Close" Width="15" Height="15" />
+                </StackPanel>
+            </Button>
 
-        <Image HorizontalAlignment="Left" Height="263" Margin="383,78,0,0" VerticalAlignment="Top" Width="356" Source="/Views/lo1.png" Stretch="UniformToFill"/>
-        <Label Content="เข้าสู่ระบบ" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top" Width="94"/>
-        <Label Content="รหัสผ่าน" HorizontalAlignment="Left" Margin="50,217,0,0" VerticalAlignment="Top" Width="94"/>
-        <Button x:Name="btn_Close" Content="X" HorizontalAlignment="Left" Margin="747,-5,0,0" VerticalAlignment="Top" Height="53" Width="51" FontSize="36" FontWeight="Bold" Click="btn_Close_Click" Background="{x:Null}" BorderBrush="{x:Null}" OpacityMask="Black" />
 
+        <Border CornerRadius="10 0 0 10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#435170" Offset="0" />
+                    <GradientStop Color="#2F394E" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Canvas>
+                    <Ellipse Margin="-80 20 0 0" Width="180" Height="180" Fill="#8f9ebc" />
+                    <Ellipse Margin="200 50 0 0" Width="40" Height="40" Fill="#8f9ebc" />
+                    <Polygon Points="100,400 200,370 180,470" Fill="#8f9ebc" />
+                    <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#8f9ebc" />
+                    <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#8f9ebc" />
+                </Canvas>
+
+                <!--<StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Sign Up" Style="{StaticResource TitleText}" />
+                    <TextBlock Text="Enter your personal info and create new account to connect us" Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
+                    <Button Content="Sign Up" Style="{StaticResource button}" />
+                </StackPanel>-->
+            </Grid>
+        </Border>
+
+        <Border Background="#FFFFFF" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="เข้าสู่ระบบจัดการหนังสือ" Foreground="#2F394E" Style="{StaticResource TitleText}" FontFamily="Kanit" />
+
+
+                <Separator Margin="25" Background="Black" DockPanel.Dock="Top" Height="0.8"/>
+
+                <Border BorderBrush="#ACB0AF" BorderThickness="1" Margin="70 7" CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Images/User.png" Height="20" />
+                        <TextBlock x:Name="textUser" MouseDown="textUser_MouseDown" Text="User" Style="{StaticResource textHint}" />
+                        <TextBox Name="txtUser" TextChanged="txtUser_TextChanged" Style="{StaticResource textBox}" />
+                    </Grid>
+                </Border>
+
+                <Border BorderBrush="#ACB0AF" BorderThickness="1" Margin="70 7" CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Images/Lock.png" Height="20" />
+                        <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Password" Style="{StaticResource textHint}" />
+                        <PasswordBox x:Name="passwordBox" PasswordChanged="PasswordBox_PasswordChanged" Style="{StaticResource textBox}" />
+                    </Grid>
+                </Border>
+
+                <Button Content="Sign In" Click="Button_Click" Style="{StaticResource mainButton}" />
+            </StackPanel>
+        </Border>
+
+       
+            
+         
+
+      
     </Grid>
 
 </Window>
