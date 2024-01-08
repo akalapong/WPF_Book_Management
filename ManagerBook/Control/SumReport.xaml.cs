@@ -14,12 +14,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static ManagerBook.Control.OrderControl;
 
-namespace ManagerBook.Views
+namespace ManagerBook.Control
 {
     /// <summary>
     /// Interaction logic for AddCustimer.xaml
     /// </summary>
-    public partial class InsertCustomer : Window
+    public partial class SumReport : Window
     {
        
         public List<ReportData> SelectedBooks { get; set; }
@@ -27,7 +27,7 @@ namespace ManagerBook.Views
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
 
-        public InsertCustomer(List<ReportData> selectedBooks, double totalPrice, int customerId, string customerName)
+        public SumReport(List<ReportData> selectedBooks, double totalPrice, int customerId, string customerName)
         {
             InitializeComponent();
             SelectedBooks = selectedBooks;

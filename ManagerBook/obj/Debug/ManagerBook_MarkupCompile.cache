@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\App.xaml
-221510271232
+19-1100616677
 
-30-1531976052
+27-698852391
 233-690147380
-Control\BoardControl.xaml;Control\BookControl.xaml;Control\CustomerControl.xaml;Control\FormAddBookControl.xaml;Control\FormEditBookControl.xaml;Control\FormReport.xaml;Control\FormInsertCustomerId.xaml;Control\FormEditCustomerControl.xaml;Control\FormAddCustomerControl.xaml;Control\InsertId.xaml;Control\MenuUserControl.xaml;Control\OrderControl.xaml;Control\Text.xaml;MainWindow.xaml;Views\AddBook.xaml;Views\EditBook.xaml;Views\Report.xaml;Views\InsertCustomer.xaml;Views\EditCustomer.xaml;Views\AddCustomer.xaml;Views\Main.xaml;Views\Login.xaml;
+Control\BoardControl.xaml;Control\BookControl.xaml;Control\CustomerControl.xaml;Control\FormAddBookControl.xaml;Control\FormEditBookControl.xaml;Control\FormEditCustomerControl.xaml;Control\FormAddCustomerControl.xaml;Control\InsertId.xaml;Control\MenuUserControl.xaml;Control\OrderControl.xaml;Control\SumReport.xaml;Control\Text.xaml;MainWindow.xaml;Views\AddBook.xaml;Views\EditBook.xaml;Views\EditCustomer.xaml;Views\AddCustomer.xaml;Views\Main.xaml;Views\Login.xaml;
 
 False
 

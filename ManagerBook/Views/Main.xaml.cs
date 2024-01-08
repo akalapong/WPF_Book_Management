@@ -32,7 +32,7 @@ namespace ManagerBook.Views
                 this.DragMove();
             }
         }
-        private bool IsMaximized = false;
+        //private bool IsMaximized = false;
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             /*

@@ -406,12 +406,6 @@
     <Compile Include="Control\FormEditBookControl.xaml.cs">
       <DependentUpon>FormEditBookControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\FormReport.xaml.cs">
-      <DependentUpon>FormReport.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\FormInsertCustomerId.xaml.cs">
-      <DependentUpon>FormInsertCustomerId.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Control\FormEditCustomerControl.xaml.cs">
       <DependentUpon>FormEditCustomerControl.xaml</DependentUpon>
     </Compile>
@@ -429,6 +423,9 @@
     </Compile>
     <Compile Include="Control\OrderDetail.cs" />
     <Compile Include="Control\StringIsEmptyConverter.cs" />
+    <Compile Include="Control\SumReport.xaml.cs">
+      <DependentUpon>SumReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\Text.xaml.cs">
       <DependentUpon>Text.xaml</DependentUpon>
     </Compile>
@@ -440,12 +437,6 @@
       <DependentUpon>EditBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OrderDetailsViewModel.cs" />
-    <Compile Include="Views\Report.xaml.cs">
-      <DependentUpon>Report.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\InsertCustomer.xaml.cs">
-      <DependentUpon>InsertCustomer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\EditCustomer.xaml.cs">
       <DependentUpon>EditCustomer.xaml</DependentUpon>
     </Compile>
@@ -478,14 +469,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Control\FormReport.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Control\FormInsertCustomerId.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Control\FormEditCustomerControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -505,6 +488,10 @@
     <Page Include="Control\OrderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SumReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Text.xaml">
       <SubType>Designer</SubType>
@@ -527,14 +514,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditBook.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Report.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\InsertCustomer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

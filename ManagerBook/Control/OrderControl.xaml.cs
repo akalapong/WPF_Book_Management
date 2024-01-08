@@ -269,8 +269,8 @@ namespace ManagerBook.Control
             if (insertId.DialogResult.HasValue && insertId.DialogResult.Value)
             {
                 // Show FormInsertCustomerId with SelectedBooks and TotalPrice
-                InsertCustomer insertCustomer = new InsertCustomer(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), insertId.CustomerId, insertId.CustomerName);
-                insertCustomer.ShowDialog();
+                SumReport sumReport = new SumReport(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), insertId.CustomerId, insertId.CustomerName);
+                sumReport.ShowDialog();
             }
         }
 
