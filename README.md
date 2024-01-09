@@ -1,6 +1,8 @@
-WPF Book Management
+C# & SQLite Book Management
 
 Login Page
+user:admin
+password:admin
 
 ![1](https://github.com/akalapong/WPF_Management/assets/150636003/a9b98635-e7bb-40a3-9404-c3064f4340d5)
 
