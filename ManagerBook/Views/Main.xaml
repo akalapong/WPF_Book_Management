@@ -10,7 +10,7 @@
         Height="720" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent">
 
-    <Border Background="#eff2f7" CornerRadius="30"  MouseLeftButtonDown="Border_MouseLeftButtonDown">
+    <Border Background="#eff2f7" CornerRadius="30"  MouseLeftButtonDown="Border_MouseLeftButtonDown" MouseDown="Border_MouseDown">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="127*"/>

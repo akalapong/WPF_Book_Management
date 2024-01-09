@@ -35,6 +35,7 @@ namespace ManagerBook.Control
 
         private int _totalBooks;
         private int _totalCustomers;
+        private int _totalSaleBooks;
         public int TotalBooks
         {
             get { return _totalBooks; }
@@ -59,6 +60,18 @@ namespace ManagerBook.Control
                 }
             }
         }
+        public int TotalSaleBooks
+        {
+            get { return _totalSaleBooks; }
+            set
+            {
+                if (_totalSaleBooks != value)
+                {
+                    _totalSaleBooks = value;
+                    OnPropertyChanged(nameof(TotalSaleBooks));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -80,7 +93,7 @@ namespace ManagerBook.Control
                 {
                     object booksResult = booksCommand.ExecuteScalar();
                     TotalBooks = (booksResult != null) ? Convert.ToInt32(booksResult) : 0;
-                    Console.WriteLine($"Total number of books: {TotalBooks}");
+                    
                 }
 
                 // Count total customers
@@ -89,7 +102,15 @@ namespace ManagerBook.Control
                 {
                     object customerResult = customerCommand.ExecuteScalar();
                     TotalCustomers = (customerResult != null) ? Convert.ToInt32(customerResult) : 0;
-                    Console.WriteLine($"Total number of customers: {TotalCustomers}");
+                    
+                }
+
+                string saleBooksQuery = "SELECT COUNT(*) FROM Transactions";
+                using (SqliteCommand saleBooksCommand = new SqliteCommand(saleBooksQuery, connection))
+                {
+                    object saleBooksResult = saleBooksCommand.ExecuteScalar();
+                    TotalSaleBooks = (saleBooksResult != null) ? Convert.ToInt32(saleBooksResult) : 0;
+                    
                 }
             }
 

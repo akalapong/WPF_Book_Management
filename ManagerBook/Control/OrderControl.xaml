@@ -24,12 +24,12 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Order" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="#121518" HorizontalAlignment="Left"/>
-        <TextBlock Text="การสั่งซื้อหนังสือ" Grid.Row="1" FontSize="12" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#4d5a66" HorizontalAlignment="Left"/>
+        <TextBlock Text="Order" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="#121518" HorizontalAlignment="Left" FontFamily="Kanit"/>
+        <TextBlock Text="การสั่งซื้อหนังสือ" Grid.Row="1" FontSize="12" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#4d5a66" HorizontalAlignment="Left" FontFamily="Kanit"/>
 
-        <TextBlock Text="ค้นหา ISBN" Grid.Row="2" FontSize="13" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Text="ค้นหา ISBN" Grid.Row="2" FontSize="13" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Kanit"/>
         <Grid Width="200" HorizontalAlignment="Left" Grid.Row="2" Margin="80 0 0 0">
-            <TextBlock x:Name="txtSearch" Margin="15 0" VerticalAlignment="Center" Foreground="#B0B9C6" IsHitTestVisible="False"
+            <TextBlock x:Name="txtSearch" Margin="15 0" VerticalAlignment="Center" Foreground="#B0B9C6" IsHitTestVisible="False" FontFamily="Kanit"
                            Panel.ZIndex="1" Text="ค้นหา..."
                            Visibility="{Binding ElementName=textBoxSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" />
 
@@ -68,7 +68,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid  BorderThickness="2" BorderBrush="#829bb0" Margin="500 0 0 180" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}" Grid.Row="5" x:Name="listDataGrid">
+        <DataGrid  BorderThickness="2" BorderBrush="#829bb0" Margin="500 0 0 140" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}" Grid.Row="5" x:Name="listDataGrid">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="95">
                     <DataGridTemplateColumn.Header>
@@ -128,7 +128,7 @@
 
 
 
-        <DataGrid  BorderThickness="2" BorderBrush="#829bb0" Margin="500 300 0 10" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}" Grid.Row="5" x:Name="totalDataGrid" SelectionChanged="totalDataGrid_SelectionChanged">
+        <DataGrid  BorderThickness="2" BorderBrush="#829bb0" Margin="500 325 0 10" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}" Grid.Row="5" x:Name="totalDataGrid" SelectionChanged="totalDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="110">
                     <DataGridTemplateColumn.CellTemplate>
@@ -140,9 +140,18 @@
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding TotalPrice, StringFormat=' {0}'}" TextAlignment="Right"/>
+                            <TextBlock Text="{Binding TotalQuantity, StringFormat='X {0}'}" TextAlignment="Right"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TotalPrice, StringFormat=' {0}'}" TextAlignment="Right"/>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>

@@ -1,4 +1,5 @@
-﻿using ManagerBook.Views;
+﻿using ManagerBook.View;
+using ManagerBook.Views;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,27 @@ namespace ManagerBook.Control
         {
             // Initialize the selected button to "Dashboard" when the control is loaded
             SelectButton(btnDBoard);
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("คุณต้องการที่จะออกจากระบบหรือไม่?", "ยืนยันการออกจากระบบ", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Login loginWindow = new Login();
+                loginWindow.Show();
+
+                Window parentWindow = Window.GetWindow(this);
+                if (parentWindow != null)
+                {
+                    parentWindow.Close();
+                }
+
+
+            }
         }
     }
 }

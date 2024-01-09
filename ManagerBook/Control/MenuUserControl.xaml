@@ -19,9 +19,9 @@
                         <TextBlock Text="Dashboard"/>
                     </StackPanel>
                 </Button>
-                
-                
-            <Button x:Name="btnCtm" Style="{StaticResource menuButton}" Click="btnCtm_Click">
+
+
+            <Button x:Name="btnCtm" Style="{StaticResource menuButton}" Click="btnCtm_Click" >
                     
                 <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuButtonIcon}"/>
@@ -29,21 +29,21 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="btnBookMana" Style="{StaticResource menuButton}" Click="btnBookMana_Click">
+            <Button x:Name="btnBookMana" Style="{StaticResource menuButton}" Click="btnBookMana_Click">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="BookEdit" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Management"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="btnOrder" Style="{StaticResource menuButton}" Click="btnOrder_Click">
+            <Button x:Name="btnOrder" Style="{StaticResource menuButton}" Click="btnOrder_Click" >
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="CartVariant" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Order"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+        <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20" Click="btnLogout_Click">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="LogoutVariant" Style="{StaticResource menuButtonIcon}"/>
                     <TextBlock Text="Logout"/>

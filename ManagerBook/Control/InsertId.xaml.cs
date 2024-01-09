@@ -24,13 +24,15 @@ namespace ManagerBook.Control
     {
         public List<ReportData> SelectedBooks { get; set; }
         public double TotalPrice { get; set; }
+        public double TotalQuantity { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
-        public InsertId(List<ReportData> selectedBooks, double totalPrice)
+        public InsertId(List<ReportData> selectedBooks, double totalPrice, double totalQuantity)
         {
             InitializeComponent();
             SelectedBooks = selectedBooks;
             TotalPrice = totalPrice;
+            TotalQuantity = totalQuantity;
         }
         
 

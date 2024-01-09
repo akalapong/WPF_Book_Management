@@ -27,15 +27,17 @@ namespace ManagerBook.Control
        
         public List<ReportData> SelectedBooks { get; set; }
         public double TotalPrice { get; set; }
+        public double TotalQuantity { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
 
-        public SumReport(List<ReportData> selectedBooks, double totalPrice, int customerId, string customerName)
+        public SumReport(List<ReportData> selectedBooks, double totalPrice, double totalQuantity, int customerId, string customerName)
         {
             InitializeComponent();
             SelectedBooks = selectedBooks;
             TotalPrice = totalPrice;
-            mainContent.DataContext = this; // Set DataContext to this for proper binding
+            TotalQuantity = totalQuantity;
+            mainContent.DataContext = this; 
             CustomerId = customerId;
             CustomerName = customerName;
         }
@@ -57,7 +59,7 @@ namespace ManagerBook.Control
             }
         }
 
-        public void AddData(uint isbn, string customerid, string quatity, string totalprice)
+        public void AddData(uint isbn, uint customerid, uint totalquatity, uint totalprice)
         {
             using (SqliteConnection db = new SqliteConnection($"Filename=sqliteSample.db"))
             {
@@ -71,7 +73,7 @@ namespace ManagerBook.Control
                 // Add parameters with values
                 insertCommand.Parameters.AddWithValue("@Isbn", isbn);
                 insertCommand.Parameters.AddWithValue("@Customer_id", customerid);
-                insertCommand.Parameters.AddWithValue("@Quatity", quatity);
+                insertCommand.Parameters.AddWithValue("@Quatity", totalquatity);
                 insertCommand.Parameters.AddWithValue("@Total_price", totalprice);
                 insertCommand.ExecuteReader();
                 db.Close();
@@ -81,7 +83,23 @@ namespace ManagerBook.Control
 
         private void AddDataButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                uint isbn = 777777;
+                uint customerId = (uint)CustomerId;
+                uint totalquatity = (uint)TotalQuantity;
+                uint totalPrice = (uint)TotalPrice; 
+
+                
+                AddData(isbn, customerId, totalquatity, totalPrice);
+                MessageBox.Show("เพิ่มข้อมูลลงในฐานข้อมูลเรียบร้อยแล้ว.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"เกิดข้อผิดพลาดในการเพิ่มข้อมูลลงในฐานข้อมูล: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

@@ -259,6 +259,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\EditC
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\AddCustomer.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Main.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Login.g.cs
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\test.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\App.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook_MarkupCompile.cache
@@ -283,6 +284,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\EditC
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\AddCustomer.baml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Main.baml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\Login.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\test.baml
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.g.resources
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.Properties.Resources.resources
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.csproj.GenerateResource.cache
@@ -290,5 +292,7 @@ C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.csproj.CopyComplete
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.exe
 C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.pdb
-C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\test.g.cs
-C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\Views\test.baml
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ManagerBook.exe.manifest
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\bin\Debug\ManagerBook.application
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.exe.manifest
+C:\Users\arkarapong_c\source\repos\ManagerBook\ManagerBook\obj\Debug\ManagerBook.application

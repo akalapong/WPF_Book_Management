@@ -10,6 +10,7 @@
         
         <!-- LoginForm -->
         <Style x:Key="TitleText" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="36" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="TextAlignment" Value="Center" />
@@ -18,6 +19,7 @@
 
 
         <Style x:Key="NormalText" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="LineHeight" Value="28" />
             <Setter Property="TextWrapping" Value="Wrap" />
@@ -27,6 +29,7 @@
 
 
         <Style x:Key="button" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Width" Value="170" />
             <Setter Property="Background" Value="Transparent" />
@@ -79,6 +82,7 @@
 
 
         <Style x:Key="textHint" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Grid.Column" Value="1" />
             <Setter Property="Panel.ZIndex" Value="1" />
@@ -88,6 +92,7 @@
 
 
         <Style x:Key="textBox" TargetType="Control">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Grid.Column" Value="1" />
             <Setter Property="Margin" Value="10 0 0 0" />
@@ -98,6 +103,7 @@
 
 
         <Style x:Key="mainButton" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Margin" Value="0 20 0 0" />
             <Setter Property="Width" Value="200" />
@@ -128,6 +134,7 @@
         <!-- LoginForm -->
 
         <Style x:Key="topButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="#6E7783" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -152,6 +159,7 @@
         </Style>
 
         <Style x:Key="gridEditButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#664BFB" />
             <Setter Property="BorderBrush" Value="#6a50fb" />
             <Setter Property="Foreground" Value="#ffffff" />
@@ -174,6 +182,7 @@
         </Style>
 
         <Style x:Key="gridBasketButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#664BFB" />
             <Setter Property="BorderBrush" Value="#6a50fb" />
             <Setter Property="Foreground" Value="#ffffff" />
@@ -284,6 +293,7 @@
             </Setter>
         </Style>
         <Style x:Key="gridRemoveButton" TargetType="Button" BasedOn="{StaticResource gridEditButton}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#D32F2F" />
             <Setter Property="BorderBrush" Value="#B71C1C" />
             <Style.Triggers>
@@ -295,12 +305,14 @@
 
 
         <Style x:Key="gridButtonIcon" TargetType="Icon:PackIconMaterial">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Width" Value="12" />
             <Setter Property="Height" Value="12" />
         </Style>
 
         <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Margin" Value="0 4 0 0" />
             <Setter Property="Background" Value="#FFFFFF"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -355,6 +367,7 @@
 
 
         <Style x:Key="DataGridRowStyle2" TargetType="{x:Type DataGridRow}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Margin" Value="2 4 0 0" />
             <Setter Property="Background" Value="#FFFFFF"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -408,6 +421,7 @@
         </Style>
 
         <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Width" Value="8"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Cursor" Value="SizeWE"/>
@@ -444,6 +458,7 @@
             </Setter>
         </Style>
         <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#222528"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -513,6 +528,7 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="DataGridCellStyle1" TargetType="{x:Type DataGridCell}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -528,6 +544,7 @@
             </Setter>
         </Style>
         <Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="#69717D" />
@@ -547,6 +564,7 @@
             </Setter>
         </Style>
         <Style x:Key="menuButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -579,6 +597,7 @@
         </Style>
 
         <Style x:Key="showButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#ff4b92" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -607,6 +626,7 @@
         </Style>
 
         <Style x:Key="showButton2" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#ffa02d" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -635,6 +655,7 @@
         </Style>
         
         <Style x:Key="showButton3" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#41d064" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -663,6 +684,7 @@
         </Style>
 
         <Style x:Key="searchTextbox" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#ffffff" />
             <Setter Property="Foreground" Value="Black" />
             <Setter Property="BorderThickness" Value="0" />
@@ -698,6 +720,7 @@
 
 
         <Style x:Key="addButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#FF869E" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -726,6 +749,7 @@
         </Style>
 
         <Style x:Key="submitButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#FF869E" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -754,6 +778,7 @@
         </Style>
 
         <Style x:Key="editButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="#664BFB" />
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -782,6 +807,7 @@
         </Style>
 
         <Style x:Key="closeButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="#6E7783" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -808,6 +834,7 @@
         </Style>
 
         <Style x:Key="filterTextBox" TargetType="TextBox" BasedOn="{StaticResource searchTextbox}">
+            <Setter Property="FontFamily" Value="Kanit" />
             <Setter Property="Padding" Value="10 7" />
             <Setter Property="Template">
                 <Setter.Value>

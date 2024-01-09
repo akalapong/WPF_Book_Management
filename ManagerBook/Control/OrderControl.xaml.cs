@@ -59,11 +59,13 @@ namespace ManagerBook.Control
             public string Phone { get; set; }
             public int Many { get; set; }
             public double TotalPrice { get; set; }
+            public double TotalQuantity { get; set; }
 
             public NameBook()
             {
                 Many = 1;
                 TotalPrice = Price;
+                TotalQuantity = 1;
             }
         }
 
@@ -74,6 +76,7 @@ namespace ManagerBook.Control
             public int Quantity { get; set; }
             public double Price { get; set; }
             public int TotalPrice { get; internal set; }
+
 
         }
  
@@ -182,6 +185,7 @@ namespace ManagerBook.Control
                     existingBook.Many++;
                     existingBook.Price = Convert.ToDouble(existingBook.Price) + Convert.ToDouble(selectedBook.Price);
                     existingBook.TotalPrice += selectedBook.Price;
+                    existingBook.TotalQuantity++;
                     ListDataGrid_SelectionChanged(null, null);
                     UpdateTotalPrice();
                 }
@@ -193,7 +197,8 @@ namespace ManagerBook.Control
                         Title = selectedBook.Title,
                         Many = 1,
                         Price = selectedBook.Price,
-                        TotalPrice = selectedBook.Price
+                        TotalPrice = selectedBook.Price,
+                        TotalQuantity = 1
                     });
 
                     UpdateTotalPrice();
@@ -215,6 +220,7 @@ namespace ManagerBook.Control
                     selectedBook.Many--;
                     selectedBook.Price -= selectedBook.Price / (selectedBook.Many + 1);
                     selectedBook.TotalPrice -= selectedBook.Price / (selectedBook.Many);
+                    selectedBook.TotalQuantity--;
 
                     if (selectedBook.Many == 0)
                     {
@@ -235,7 +241,11 @@ namespace ManagerBook.Control
         private void UpdateTotalPrice()
         {
             double totalPrice = selectedBooks.Sum(book => book.TotalPrice);
-            totalDataGrid.ItemsSource = new List<NameBook> { new NameBook { Title = "Total Price", TotalPrice = totalPrice } };
+            double totalQuantity = selectedBooks.Sum(book => book.TotalQuantity);
+
+            totalDataGrid.ItemsSource = new List<NameBook> { new NameBook { Title = "Total Price", TotalPrice = totalPrice, TotalQuantity = totalQuantity } };
+            //totalDataGrid.ItemsSource = new List<NameBook> { new NameBook { Title = "Total Price", TotalPrice = totalPrice } };
+
         }
 
         private void ListDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -262,14 +272,14 @@ namespace ManagerBook.Control
 
 
             // Show InsertId before FormInsertCustomerId
-            InsertId insertId = new InsertId(GetReportData(), selectedBooks.Sum(book => book.TotalPrice));
+            InsertId insertId = new InsertId(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), selectedBooks.Sum(book => book.TotalQuantity));
             insertId.ShowDialog();
 
             // ตรวจสอบว่า FormInsertCustomerId ถูกปิดลงหรือไม่
             if (insertId.DialogResult.HasValue && insertId.DialogResult.Value)
             {
                 // Show FormInsertCustomerId with SelectedBooks and TotalPrice
-                SumReport sumReport = new SumReport(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), insertId.CustomerId, insertId.CustomerName);
+                SumReport sumReport = new SumReport(GetReportData(), selectedBooks.Sum(book => book.TotalPrice), selectedBooks.Sum(book => book.TotalQuantity), insertId.CustomerId, insertId.CustomerName);
                 sumReport.ShowDialog();
 
 

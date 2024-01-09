@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
                 Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         WindowStyle="None" 
-        AllowsTransparency="True">
+        AllowsTransparency="True" Background="Transparent">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,13 +19,13 @@
 
 
         <Button x:Name="btnClose" Style="{StaticResource closeButton}" Click="btn_Close_Click" Grid.Column="1" Panel.ZIndex="1" Margin="0 3 3 410">
-                <StackPanel Orientation="Horizontal">
-                    <Icon:PackIconMaterial Kind="Close" Width="15" Height="15" />
-                </StackPanel>
-            </Button>
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Close" Width="15" Height="15" />
+            </StackPanel>
+        </Button>
 
 
-        <Border CornerRadius="10 0 0 10">
+        <Border CornerRadius="30 0 0 30">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#435170" Offset="0" />
@@ -38,21 +38,19 @@
                     <Ellipse Margin="-80 20 0 0" Width="180" Height="180" Fill="#8f9ebc" />
                     <Ellipse Margin="200 50 0 0" Width="40" Height="40" Fill="#8f9ebc" />
                     <Polygon Points="100,400 200,370 180,470" Fill="#8f9ebc" />
+                  
                     <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#8f9ebc" />
+                    <Ellipse Margin="310 10 0 0" Width="20" Height="20" Fill="#8f9ebc" />
                     <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#8f9ebc" />
                 </Canvas>
 
-                <!--<StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="Sign Up" Style="{StaticResource TitleText}" />
-                    <TextBlock Text="Enter your personal info and create new account to connect us" Opacity="0.8" Margin="20 30 20 30" Style="{StaticResource NormalText}" />
-                    <Button Content="Sign Up" Style="{StaticResource button}" />
-                </StackPanel>-->
+                
             </Grid>
         </Border>
 
-        <Border Background="#FFFFFF" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
+        <Border Background="#FFFFFF" Grid.Column="1" CornerRadius="0 30 30 0" MouseDown="Border_MouseDown">
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="เข้าสู่ระบบจัดการหนังสือ" Foreground="#2F394E" Style="{StaticResource TitleText}" FontFamily="Kanit" />
+                <TextBlock Text="เข้าสู่ระบบจัดการหนังสือ" Foreground="#2F394E" Style="{StaticResource TitleText}" />
 
 
                 <Separator Margin="25" Background="Black" DockPanel.Dock="Top" Height="0.8"/>
@@ -86,12 +84,6 @@
                 <Button Content="Sign In" Click="Button_Click" Style="{StaticResource mainButton}" />
             </StackPanel>
         </Border>
-
-       
-            
-         
-
-      
     </Grid>
 
 </Window>

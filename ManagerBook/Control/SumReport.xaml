@@ -41,24 +41,24 @@
                 </Grid.RowDefinitions>
                 <StackPanel DockPanel.Dock="Top">
 
-                    <TextBlock Text="สรุปรายการ" FontSize="12" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#4d5a66" DockPanel.Dock="Top"/>
-                    <TextBlock Text="Summary Report" FontSize="22" FontWeight="SemiBold" Margin="0 0 0 0" Foreground="#121518" DockPanel.Dock="Top"/>
+                    <TextBlock Text="สรุปรายการ" FontSize="12" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#4d5a66" DockPanel.Dock="Top" FontFamily="Kanit"/>
+                    <TextBlock Text="Summary Report" FontSize="22" FontWeight="SemiBold" Margin="0 0 0 0" Foreground="#121518" DockPanel.Dock="Top" FontFamily="Kanit"/>
                     <Separator Margin="25" Background="Black" DockPanel.Dock="Top" Height="0.8"/>
                     <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                        <TextBlock Text="รหัสลูกค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="รหัสลูกค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Kanit"/>
                         <TextBlock Text="{Binding CustomerId}" FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                        <TextBlock Text="ชื่อ: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="ชื่อ: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Kanit"/>
                         <TextBlock Text="{Binding CustomerName}" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <TextBlock Text="รายการสั่งซื้อสินค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="รายการสั่งซื้อสินค้า: " FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Kanit"/>
                     </StackPanel>
-                    <DataGrid ItemsSource="{Binding SelectedBooks}" MaxHeight="210" Margin="0 10 0 0" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}">
+                    <DataGrid ItemsSource="{Binding SelectedBooks}" MaxHeight="220" Margin="0 10 0 0" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle2}">
                         
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding BookName}" IsReadOnly="True" Width="400" />
+                            <DataGridTextColumn Binding="{Binding BookName}" IsReadOnly="True" Width="380" />
                             <DataGridTemplateColumn Width="Auto">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -71,13 +71,16 @@
                         
                     </DataGrid>
 
-                    <TextBlock FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap">
-                        <Run Text="รวมราคา: "/>
+                    <TextBlock FontSize="13" FontWeight="SemiBold" Margin="0 10 0 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Kanit">
+                        <Run Text="จำนวน: "/>
+                        <Run Text="{Binding TotalQuantity}" />
+                        <Run Text="เล่ม "/>
+                        <Run Text="/ รวมราคา: "/>
                         <Run Text="{Binding TotalPrice}" />
                     </TextBlock>
 
 
-                    <Button Style="{StaticResource addButton}" Margin="15 20 15 20">
+                    <Button Style="{StaticResource addButton}" Margin="15 20 15 20" Click="AddDataButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Icon:PackIconMaterial Kind="Check" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
                             <TextBlock Text="ยืนยัน"/>
